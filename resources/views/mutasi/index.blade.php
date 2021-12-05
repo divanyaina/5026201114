@@ -22,14 +22,14 @@
 		</tr>
 		@foreach($mutasi as $m)
 		<tr>
-			<td>{{ $m->mutasi_idpegawai }}</td>
-            <td>{{ $m->mutasi_departemen }}</td>
-			<td>{{ $m->mutasi_subdepartemen }}</td>
-			<td>{{ $m->mutasi_mulaibertugas }}</td>
+			<td>{{ $m->IDPegawai }}</td>
+            <td>{{ $m->Departemen }}</td>
+			<td>{{ $m->SubDepartemen }}</td>
+			<td>{{ $m->MulaiBertugas }}</td>
 			<td>
-				<a href="/mutasi/edit/{{ $m->mutasi_id }}">Edit</a>
+				<a href="/mutasi/edit/{{ $m->ID }}">Edit</a>
 				|
-				<a href="/mutasi/hapus/{{ $m->mutasi_id }}">Hapus</a>
+				<a href="/mutasi/hapus/{{ $m->ID }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach

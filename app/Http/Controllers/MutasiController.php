@@ -10,15 +10,15 @@ class MutasiController extends Controller
 {
     public function index()
     {
-    	// mengambil data dari table pegawai
+    	// mengambil data dari table mutasi
     	$mutasi = DB::table('mutasi')->get();
 
-    	// mengirim data pegawai ke view index
+    	// mengirim data mutasi ke view index
     	return view('mutasi.index',['mutasi' => $mutasi]);
 
     }
 
-    // method untuk menampilkan view form tambah pegawai
+    // method untuk menampilkan view form tambah mutasi
     public function tambah()
     {
 
@@ -27,52 +27,52 @@ class MutasiController extends Controller
 
     }
 
-    // method untuk insert data ke table pegawai
+    // method untuk insert data ke table mutasi
     public function store(Request $request)
     {
-        // insert data ke table pegawai
+        // insert data ke table mutasi
         DB::table('mutasi')->insert([
-            'mutasi_idpegawai' => $request->idpegawai,
-            'mutasi_departemen' => $request->departemen,
-            'mutasi_subdepartemen' => $request->subdepartemen,
-            'mutasi_mulaibertugas' => $request->mulaibertugas
+            'IDPegawai' => $request->idpegawai,
+            'Departemen' => $request->departemen,
+            'SubDepartemen' => $request->subdepartemen,
+            'MulaiBertugas' => $request->mulaibertugas
         ]);
-        // alihkan halaman ke halaman pegawai
+        // alihkan halaman ke halaman mutasi
         return redirect('/mutasi');
 
     }
 
-    // method untuk edit data pegawai
+    // method untuk edit data mutasi
     public function edit($id)
     {
-        // mengambil data pegawai berdasarkan id yang dipilih
-        $mutasi = DB::table('mutasi')->where('mutasi_id',$id)->get();
-        // passing data pegawai yang didapat ke view edit.blade.php
+        // mengambil data mutasi berdasarkan id yang dipilih
+        $mutasi = DB::table('mutasi')->where('ID',$id)->get();
+        // passing data mutasi yang didapat ke view edit.blade.php
         return view('mutasi.edit', ['mutasi' => $mutasi]);
 
     }
 
-    // update data pegawai
+    // update data mutasi
     public function update(Request $request)
     {
-        // update data pegawai
-        DB::table('mutasi')->where('mutasi_id',$request->id)->update([
-            'mutasi_idpegawai' => $request->idpegawai,
-            'mutasi_departemen' => $request->departemen,
-            'mutasi_subdepartemen' => $request->subdepartemen,
-            'mutasi_mulaibertugas' => $request->mulaibertugas
+        // update data mutasi
+        DB::table('mutasi')->where('ID',$request->id)->update([
+            'IDPegawai' => $request->idpegawai,
+            'Departemen' => $request->departemen,
+            'SubDepartemen' => $request->subdepartemen,
+            'MulaiBertugas' => $request->mulaibertugas
         ]);
-        // alihkan halaman ke halaman pegawai
+        // alihkan halaman ke halaman mutasi
         return redirect('/mutasi');
     }
 
-    // method untuk hapus data pegawai
+    // method untuk hapus data mutasi
     public function hapus($id)
     {
-        // menghapus data pegawai berdasarkan id yang dipilih
-        DB::table('mutasi')->where('mutasi_id',$id)->delete();
+        // menghapus data mutasi berdasarkan id yang dipilih
+        DB::table('mutasi')->where('ID',$id)->delete();
 
-        // alihkan halaman ke halaman pegawai
+        // alihkan halaman ke halaman mutasi
         return redirect('/mutasi');
     }
 }
