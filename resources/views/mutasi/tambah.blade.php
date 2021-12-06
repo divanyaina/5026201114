@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Data Pegawai Mutasi</title>
-</head>
-<body>
+@extends('layout.ceria')
 
-	<h3>Tambah Mutasi</h3>
+@section('title', 'Mutasi Pegawai')
 
-	<a href="/mutasi"> Kembali</a>
+@section('isikonten')
 
-	<br/>
-	<br/>
-
+@section('judulhalaman', 'Tambah Data Pegawai Mutasi')
+    <a href="/mutasi"> Kembali</a>
 	<form action="/mutasi/store" method="post">
 		{{ csrf_field() }}
 		ID Pegawai <input type="number" name="idpegawai" required="required"> <br/>
@@ -20,6 +14,5 @@
 		Mulai Bertugas <input type="date" name="mulaibertugas" required="required"> <br/>
 		<input type="submit" value="Simpan Data">
 	</form>
+@endsection
 
-</body>
-</html>

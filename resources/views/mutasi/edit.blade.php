@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Data Pegawai Mutasi</title>
-</head>
-<body>
+@extends('layout.ceria')
 
-	<h3>Edit Mutasi</h3>
+@section('title', 'Mutasi Pegawai')
 
-	<a href="/mutasi"> Kembali</a>
+@section('isikonten')
 
-	<br/>
-	<br/>
-
+@section('judulhalaman', 'Edit Data Pegawai Mutasi')
+    <a href="/mutasi"> Kembali</a>
 	@foreach($mutasi as $m)
 	<form action="/mutasi/update" method="post">
 		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $m->ID }}"> <br/>
+		<input type="hidden" name="id" value="{{ $m->ID }}">
 		ID Pegawai <input type="number" required="required" name="idpegawai" value="{{ $m->IDPegawai }}"> <br/>
 		Departemen <input type="text" required="required" name="departemen" value="{{ $m->Departemen }}"> <br/>
         Sub Departemen <input type="text" required="required" name="subdepartemen" value="{{ $m->SubDepartemen }}"> <br/>
@@ -23,7 +17,4 @@
 		<input type="submit" value="Simpan Data">
 	</form>
 	@endforeach
-
-
-</body>
-</html>
+@endsection
