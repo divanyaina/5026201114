@@ -4,16 +4,25 @@
 
 @section('isikonten')
 
-@section('judulhalaman', 'Data Pegawai Mutasi')
+@section('judulhalaman', 'Data Mutasi Pegawai')
 
-    <a href="/mutasi/tambah" class="btn btn-primary" > + Tambah Data Pegawai Mutasi Baru</a>
+    <a href="/mutasi/tambah" class="btn btn-primary" > + Tambah Data Pegawai Mutasi</a>
 
     <br/>
     <br/>
+
+    <p>Cari Data Mutasi :</p>
+	<form action="/mutasi/cari" method="GET">
+		<input type="text" name="cari" placeholder="Cari Berdasarkan Nama" value="{{ old('cari') }}">
+        <button type="submit"><i class="fa fa-search"></i></button>
+	</form>
+
+    <br>
 
     <table class="table table-success table-striped">
         <tr>
-			<th>ID Pegawai</th>
+            <th>No</th>
+			<th>Nama Pegawai</th>
 			<th>Departemen</th>
 			<th>Sub Departemen</th>
 			<th>Mulai Bertugas</th>
@@ -21,7 +30,8 @@
 		</tr>
         @foreach($mutasi as $m)
 		<tr>
-			<td>{{ $m->IDPegawai }}</td>
+            <td>{{ $loop->iteration }}</td>
+			<td>{{ $m->pegawai_nama }}</td>
             <td>{{ $m->Departemen }}</td>
 			<td>{{ $m->SubDepartemen }}</td>
 			<td>{{ $m->MulaiBertugas }}</td>
@@ -33,5 +43,7 @@
 		</tr>
 		@endforeach
     </table>
+
+    {{ $mutasi->links()  }}
 
 @endsection

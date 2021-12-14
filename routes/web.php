@@ -37,6 +37,8 @@ Route::post('/pegawai/store','PegawaiController@store');
 Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+Route::get('/pegawai/cari','PegawaiController@cari');
+Route::get('/pegawai/detail/{id}','PegawaiController@view');
 
 //route CRUD Mutasi
 Route::get('/mutasi','MutasiController@index');
@@ -45,6 +47,7 @@ Route::post('/mutasi/store','MutasiController@store');
 Route::get('/mutasi/edit/{id}','MutasiController@edit');
 Route::post('/mutasi/update','MutasiController@update');
 Route::get('/mutasi/hapus/{id}','MutasiController@hapus');
+Route::get('/mutasi/cari','MutasiController@cari');
 
 //route CRUD Absen
 Route::get('/absen','AbsenController@index');
@@ -53,4 +56,14 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
+Route::get('/absen/cari','AbsenController@cari');
 
+//route CRUD Buku
+Route::get('/buku','BukuController@index');
+Route::get('/buku/tambah','BukuController@tambah');
+Route::post('/buku/store','BukuController@store');
+Route::get('/buku/edit/{id}','BukuController@edit');
+Route::post('/buku/update','BukuController@update');
+Route::get('/buku/hapus/{id}','BukuController@hapus');
+Route::get('/buku/cari','BukuController@cari');
+Route::get('/buku/detail/{id}','BukuController@view');
