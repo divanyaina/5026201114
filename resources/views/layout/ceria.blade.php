@@ -88,6 +88,7 @@
         <a href="/absen">Absen</a>
         <a href="/mutasi">Mutasi</a>
         <a href="/buku">Buku</a>
+        <a href="/karyawan1">Karyawan1</a>
     </div>
 
     <div class="main">

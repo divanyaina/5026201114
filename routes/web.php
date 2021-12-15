@@ -67,3 +67,9 @@ Route::post('/buku/update','BukuController@update');
 Route::get('/buku/hapus/{id}','BukuController@hapus');
 Route::get('/buku/cari','BukuController@cari');
 Route::get('/buku/detail/{id}','BukuController@view');
+
+//route CRUD karyawan1
+Route::get('/karyawan1','Karyawan1Controller@index');
+Route::get('/karyawan1/edit/{id}','Karyawan1Controller@edit');
+Route::post('/karyawan1/update','Karyawan1Controller@update');
+Route::get('/karyawan1/detail/{id}','Karyawan1Controller@view');
